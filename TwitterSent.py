@@ -5,14 +5,9 @@ import matplotlib.pyplot as plt
 import numpy as np 
 
 def main():
-	#conecting to the twitter api
-	
-
-	auth = tweepy.OAuthHandler(consumer_key , consumer_secret)
-	auth.set_access_token(access_token , access_token_secrete)
-
-	api = tweepy.API(auth)
 	#trend that we are searching for. 
+
+	api = connect_to_twitter(consumer_key,consumer_secret,access_token,access_token_secrete)
 	public_tweets = api.search('Trump')
 
 	polarity = []
@@ -23,10 +18,17 @@ def main():
 		status.append(get_status(analysis.sentiment.polarity))
 
 	df = convert_to_dataframe(polarity,status)
+	print(df)
 	
 
 	
-	
+def connect_to_twitter(consumer_key,consumer_secret,access_token,access_token_secrete):
+	auth = tweepy.OAuthHandler(consumer_key , consumer_secret)
+	auth.set_access_token(access_token , access_token_secrete)
+
+	api = tweepy.API(auth)
+	return api
+
 
 def convert_to_dataframe(polarity,status):
 	data ={
