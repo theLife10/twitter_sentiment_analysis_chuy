@@ -2,7 +2,10 @@ import tweepy
 from textblob import TextBlob
 import pandas as pd 
 import matplotlib.pyplot as plt
-import numpy as np 
+from nltk.tokenize import sent_tokenize
+from nltk.tokenize import word_tokenize
+from nltk.tokenize import regexp_tokenize
+from nltk.tokenize import TweetTokenizer
 
 def main():
 	#trend that we are searching for. 
@@ -45,5 +48,7 @@ def get_status(polarity):
 		return 'positive'
 	else:
 		return 'negative'
+
+
 	
 main()
