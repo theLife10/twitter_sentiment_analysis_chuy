@@ -1,7 +1,6 @@
 import tweepy
 from textblob import TextBlob
 import pandas as pd 
-import matplotlib.pyplot as plt
 from nltk.tokenize import sent_tokenize
 from nltk.tokenize import word_tokenize
 from nltk.tokenize import regexp_tokenize
