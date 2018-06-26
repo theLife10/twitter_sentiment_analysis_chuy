@@ -31,7 +31,7 @@ def connect_to_twitter(consumer_key,consumer_secret,access_token,access_token_se
 	api = tweepy.API(auth)
 	return api
 
-
+#puting putting polarity and status into a dic
 def convert_to_dataframe(polarity,status):
 	data ={
 	'polarity' : polarity,
